@@ -31,8 +31,7 @@ Add `TappEventTracker.h` and `TappEventTracker.m` to your iOS app in Xcode. If y
 
 At the top of your AppDelegate.m file include the TappEventTracker header:
 
-```#include "TappEventTracker.h"
-```
+`#include "TappEventTracker.h"`
 
 In your AppDelegate's application:didFinishLaunchingWithOptions: method configure the tracking service:
 
@@ -48,13 +47,11 @@ In your AppDelegate's application:didFinishLaunchingWithOptions: method configur
 
 Whenever you need to record an event simply call:
 
-```[TappEventTracker trackEvent:@"MY_EVENT_NAME"];
-```
+`[TappEventTracker trackEvent:@"MY_EVENT_NAME"];`
 
 or
 
-```[TappEventTracker trackEvent:@"MY_EVENT_NAME" withValue:@"VALUE"];
-```
+`[TappEventTracker trackEvent:@"MY_EVENT_NAME" withValue:@"VALUE"];`
 
 # License
 
