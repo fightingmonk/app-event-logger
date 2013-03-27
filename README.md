@@ -5,11 +5,9 @@ A simple iOS mobile app event logger / flight data recorder
 
 # How it works
 
-You upload tapp-tracker.php to your web server, add the TappEventTracker class to your iOS app, configure it when your app starts, and when you have something to track you call 
+You upload tapp-tracker.php to your web server, add the TappEventTracker class to your iOS app, configure it when your app starts, and when your app has something to track you call `[TappEventTracker trackEvent:@"my_event"];`.
 
-`[TappEventTracker trackEvent:@"my_event" withValue:@"value"];`
-
-TappEventTracker takes care of periodically pushing your tracked events to the server and you get a nice CSV with timestamp, client IP address, device id, and event info. You can process it, parse it, or load it into Google Docs if you're of a mind to.
+TappEventTracker takes care of periodically pushing your event data to your server and you get a nice CSV with timestamp, client IP address, device id, and event info. You can process it, parse it, or load it into Google Docs if you're of a mind to.
 
 # Installing the PHP tracker
 
@@ -35,7 +33,8 @@ At the top of your AppDelegate.m file include the TappEventTracker header:
 
 In your AppDelegate's application:didFinishLaunchingWithOptions: method configure the tracking service:
 
-```// You can set this to YES to log lots of messages to the console via NSLog()
+```
+// You can set this to YES to log lots of messages to the console via NSLog()
 [TappEventTracker sharedInstance].beVerbose = NO;
 // Point this to the tracker script you installed on your web site
 [TappEventTracker sharedInstance].reportURL = [NSURL URLWithString:@"http://www.example.com/path/to/tapp-tracker.php"];
